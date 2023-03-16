@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Auth</title>
+</head>
+<body>
+<form th:action="@{/api/auth/choose_role}" method="post">
+  <h1>Hello!</h1><br>
+  <table>
+    <tr>
+      <td>Roles</td>
+      <td>
+        <select  name="category" style="height: 22px; width: 200px" th:field="*{chosenRole.role}">
+          <option value="">---</option>
+          <option th:each="role : ${rolesToChoose}"
+                  th:value="${role}"
+                  th:text="${role}">
+          </option>
+        </select>
+      </td>
+    </tr>
+  </table>
+  </table>
+  <button type="submit">Save</button>
+</form>
+</body>
+</html>
