@@ -1,23 +1,38 @@
 server:
-    server.port=9000
+    server.port=8089
 
 spring:
+#    jpa:
+#        hibernate:
+#            dll-auto: create-drop
+#        show-sql: false
+#        properties:
+#            hibernate:
+#                hbm2ddl:
+#                    auto: update
     jpa:
-        hibernate:
-            dll-auto: create-drop
-        show-sql: false
         properties:
             hibernate:
-                hbm2ddl:
-                    auto: update
+#                dialect: org.hibernate.dialect.PostgreSQL10Dialect
+                #log
+                show_sql: false
+#                temp:
+#                    # without metadata from DB
+#                    use_jdbc_metadata_defaults: false
 
     datasource:
-        url: jdbc:postgresql://localhost:5432/postgres
-        username: postgres
-        password: postgres
         driver-class-name: org.postgresql.Driver
+        url: jdbc:postgresql://db22.spmi.edu.ru:5432/university
+        username: university_db
+        password: "osiris"
 #    flyway:
 #        baseline-on-migrate: true
+springdoc:
+    show-actuator: true
+    swagger-ui:
+        enabled: true
+        path: swagger-ui.html
+
 
 jwt:
     header:

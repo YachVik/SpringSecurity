@@ -10,7 +10,7 @@ public class SpringSecurityApplication {
 
     public static void main(String[] args) {
         SpringApplication app = new SpringApplication(SpringSecurityApplication.class);
-        app.setDefaultProperties(Collections.singletonMap("server.port", 9000));
+        app.setDefaultProperties(Collections.singletonMap("server.port", 8089));
         app.run();
     }
 
